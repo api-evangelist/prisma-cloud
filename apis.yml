@@ -1,0 +1,28 @@
+aid: prisma-cloud
+name: Prisma Cloud
+description: >-
+  Prisma Cloud by Palo Alto Networks provides comprehensive cloud native security across the full application lifecycle.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Containers
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/prisma-cloud/refs/heads/main/apis.yml
+created: '2026-03-26'
+modified: '2026-03-26'
+specificationVersion: '0.19'
+apis:
+  - aid: prisma-cloud:prisma-cloud
+    name: Prisma Cloud
+    description: >-
+      Prisma Cloud by Palo Alto Networks provides comprehensive cloud native security across the full application lifecycle.
+    humanURL: https://github.com/api-evangelist/prisma-cloud
+    tags:
+      - Containers
+    properties: []
+common:
+  - type: Website
+    url: https://github.com/api-evangelist/prisma-cloud
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
