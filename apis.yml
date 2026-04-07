@@ -8,12 +8,12 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Containers
-  - Security
+  - Cloud Native
   - Cloud Security
   - Compliance
-  - Cloud Native
+  - Containers
   - CSPM
+  - Security
 url: >-
   https://raw.githubusercontent.com/api-evangelist/prisma-cloud/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -29,11 +29,11 @@ apis:
       management.
     humanURL: https://www.paloaltonetworks.com/prisma/cloud
     tags:
-      - Containers
-      - Security
+      - Cloud Native
       - Cloud Security
       - Compliance
-      - Cloud Native
+      - Containers
+      - Security
     properties:
       - type: Documentation
         url: https://docs.prismacloud.io/en
