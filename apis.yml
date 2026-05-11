@@ -54,6 +54,15 @@ common:
     url: https://www.paloaltonetworks.com/blog/
   - type: Status
     url: https://sase.status.paloaltonetworks.com/
+  - type: Integrations
+    url: https://www.paloaltonetworks.com/partners
+integrations:
+  - name: CSP
+  - name: GSI
+  - name: MSSP
+  - name: SP
+  - name: Solution Providers
+  - name: Partner Login
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
