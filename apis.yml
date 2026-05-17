@@ -37,22 +37,22 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.prismacloud.io/en
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
 common:
   - type: Website
     url: https://www.paloaltonetworks.com/prisma/cloud
   - type: Documentation
     url: https://docs.prismacloud.io/en
-  - type: Getting Started
+  - type: GettingStarted
     url: https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/PaloAltoNetworks
   - type: Pricing
     url: https://www.paloaltonetworks.com/resources/guides/prisma-cloud-pricing-and-editions
   - type: Blog
     url: https://www.paloaltonetworks.com/blog/
-  - type: Status
+  - type: StatusPage
     url: https://sase.status.paloaltonetworks.com/
   - type: Integrations
     url: https://www.paloaltonetworks.com/partners
