@@ -40,6 +40,8 @@ apis:
       - type: GettingStarted
         url: https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/prisma-cloud-by-palo-alto-networks
   - type: Website
     url: https://www.paloaltonetworks.com/prisma/cloud
   - type: Documentation
