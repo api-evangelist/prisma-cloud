@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: Prisma Cloud CSPM API (Authentication)
+  description: |
+    Prisma Cloud by Palo Alto Networks exposes a REST API for programmatic access
+    to the Cloud Security Posture Management (CSPM) platform. This specification
+    documents the JWT-based authentication flow that all other Prisma Cloud REST
+    endpoints depend on.
+
+    Authentication is performed by POSTing an Access Key ID / Secret Key pair to
+    /login, which returns a short-lived JWT. The JWT is then supplied on
+    subsequent requests via the x-redlock-auth header, and can be refreshed
+    before expiry via GET /auth_token/extend.
+
+    The base URL of the API depends on the customer's Prisma Cloud stack (for
+    example https://api.prismacloud.io, https://api2.prismacloud.io, or one of
+    the regional variants); the value in `servers` should be replaced with the
+    URL shown in the customer's Prisma Cloud console.
+  version: "1.0"
+  contact:
+    name: Palo Alto Networks - Prisma Cloud
+    url: https://docs.prismacloud.io/en
+  license:
+    name: Palo Alto Networks Terms of Use
+    url: https://www.paloaltonetworks.com/legal-notices/terms-of-use
+servers:
+  - url: https://{stack}.prismacloud.io
+    description: Prisma Cloud Enterprise Edition stack
+    variables:
+      stack:
+        default: api
+        description: Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).
+tags:
+  - name: Authentication
+    description: Login and JWT token lifecycle for Prisma Cloud CSPM.
+paths:
+  /login:
+    post:
+      tags: [Authentication]
+      summary: Log in and obtain a JWT
+      description: |
+        Exchanges an Access Key ID and Secret Key for a short-lived (10 minute)
+        JSON Web Token used to authenticate subsequent Prisma Cloud API calls.
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username:
+                  type: string
+                  description: Prisma Cloud Access Key ID.
+                password:
+                  type: string
+                  description: Prisma Cloud Secret Key.
+                customerName:
+                  type: string
+                  description: Optional tenant / customer name for multi-tenant logins.
+      responses:
+        "200":
+          description: Login successful; returns a JWT.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: JWT to be supplied in the x-redlock-auth header on subsequent requests.
+                  message:
+                    type: string
+                  customerNames:
+                    type: array
+                    items: { type: string }
+        "401":
+          description: Invalid credentials.
+  /auth_token/extend:
+    get:
+      tags: [Authentication]
+      summary: Extend (refresh) the JWT
+      description: |
+        Refreshes the current JWT before it expires. Must be called with a still-valid
+        token; if the token has already expired the caller must re-authenticate via
+        POST /login.
+      operationId: extendAuthToken
+      security:
+        - redlockAuth: []
+      responses:
+        "200":
+          description: Refreshed JWT.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token: { type: string }
+        "401":
+          description: Token expired or invalid.
+components:
+  securitySchemes:
+    redlockAuth:
+      type: apiKey
+      in: header
+      name: x-redlock-auth
+      description: |
+        JWT obtained from POST /login. Tokens are valid for 10 minutes and can be
+        refreshed via GET /auth_token/extend.
+security:
+  - redlockAuth: []
