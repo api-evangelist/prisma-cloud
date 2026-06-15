@@ -1,0 +1,382 @@
+{
+  "item": [
+    {
+      "id": "962ff7ce-b9be-49ec-a6e0-ea276d9598aa",
+      "name": "Authentication",
+      "description": {
+        "content": "Login and JWT token lifecycle for Prisma Cloud CSPM.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c57ca9a-d4af-437e-8048-891074bcb0ed",
+          "name": "Log in and obtain a JWT",
+          "request": {
+            "name": "Log in and obtain a JWT",
+            "description": {
+              "content": "Exchanges an Access Key ID and Secret Key for a short-lived (10 minute)\nJSON Web Token used to authenticate subsequent Prisma Cloud API calls.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+                  "type": "any",
+                  "value": "{{stack}}",
+                  "key": "stack"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"customerName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "345922ef-3a9e-4620-bdab-562d1f3c9697",
+              "name": "Login successful; returns a JWT.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+                      "type": "any",
+                      "value": "{{stack}}",
+                      "key": "stack"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-redlock-auth",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"customerName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"message\": \"string\",\n  \"customerNames\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd7fc1e9-5560-44b6-99ef-a54c47c1ee58",
+              "name": "Invalid credentials.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+                      "type": "any",
+                      "value": "{{stack}}",
+                      "key": "stack"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-redlock-auth",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"customerName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbe41bc3-8b67-462a-8deb-8cb8f99534fc",
+          "name": "Extend (refresh) the JWT",
+          "request": {
+            "name": "Extend (refresh) the JWT",
+            "description": {
+              "content": "Refreshes the current JWT before it expires. Must be called with a still-valid\ntoken; if the token has already expired the caller must re-authenticate via\nPOST /login.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth_token",
+                "extend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+                  "type": "any",
+                  "value": "{{stack}}",
+                  "key": "stack"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-redlock-auth"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fbb04635-deb3-4171-9aec-9e4b26c78918",
+              "name": "Refreshed JWT.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth_token",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+                      "type": "any",
+                      "value": "{{stack}}",
+                      "key": "stack"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-redlock-auth",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18fe4a55-1b92-485a-9217-ba6ff17c16f8",
+              "name": "Token expired or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth_token",
+                    "extend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+                      "type": "any",
+                      "value": "{{stack}}",
+                      "key": "stack"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-redlock-auth",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Region-specific API hostname for the customer's stack (api, api2, api.eu, api.gov, ...).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "api",
+      "key": "stack"
+    },
+    {
+      "type": "string",
+      "value": "https://{{stack}}.prismacloud.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-redlock-auth"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "76c398ee-fffb-45de-b692-11a88220914b",
+    "name": "Prisma Cloud CSPM API (Authentication)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Prisma Cloud by Palo Alto Networks exposes a REST API for programmatic access\nto the Cloud Security Posture Management (CSPM) platform. This specification\ndocuments the JWT-based authentication flow that all other Prisma Cloud REST\nendpoints depend on.\n\nAuthentication is performed by POSTing an Access Key ID / Secret Key pair to\n/login, which returns a short-lived JWT. The JWT is then supplied on\nsubsequent requests via the x-redlock-auth header, and can be refreshed\nbefore expiry via GET /auth_token/extend.\n\nThe base URL of the API depends on the customer's Prisma Cloud stack (for\nexample https://api.prismacloud.io, https://api2.prismacloud.io, or one of\nthe regional variants); the value in `servers` should be replaced with the\nURL shown in the customer's Prisma Cloud console.\n\n\nContact Support:\n Name: Palo Alto Networks - Prisma Cloud",
+      "type": "text/plain"
+    }
+  }
+}

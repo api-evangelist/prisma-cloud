@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Prisma Cloud CSPM API (Authentication)",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-redlock-auth",
+      "value": "{{x-redlock-auth}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log in and obtain a JWT",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{stack}.prismacloud.io/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Exchanges an Access Key ID and Secret Key for a short-lived (10 minute)\nJSON Web Token used to authenticate subsequent Prisma Cloud API calls.\n"
+        },
+        {
+          "info": {
+            "name": "Extend (refresh) the JWT",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{stack}.prismacloud.io/auth_token/extend",
+            "auth": {
+              "type": "apikey",
+              "key": "x-redlock-auth",
+              "value": "{{x-redlock-auth}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Refreshes the current JWT before it expires. Must be called with a still-valid\ntoken; if the token has already expired the caller must re-authenticate via\nPOST /login.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
