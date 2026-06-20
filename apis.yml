@@ -6,7 +6,7 @@ description: >-
   multi-cloud and hybrid environments. It covers cloud security posture
   management, workload protection, identity security, and code security.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Cloud Native
   - Cloud Security
