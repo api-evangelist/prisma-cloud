@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/prisma-cloud-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: redlockAuth
+  type: apiKey
+  in: header
+  parameter: x-redlock-auth
+  description: |-
+    JWT obtained from POST /login. Tokens are valid for 10 minutes and can be
+    refreshed via GET /auth_token/extend.
+  sources:
+  - openapi/prisma-cloud-openapi.yml

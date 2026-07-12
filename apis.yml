@@ -40,6 +40,10 @@ apis:
       - type: GettingStarted
         url: https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
 common:
+  - type: DomainSecurity
+    url: security/prisma-cloud-domain-security.yml
+  - type: Authentication
+    url: authentication/prisma-cloud-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/showcase/prisma-cloud-by-palo-alto-networks
   - type: Website
