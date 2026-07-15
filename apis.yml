@@ -40,6 +40,8 @@ apis:
       - type: GettingStarted
         url: https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
 common:
+  - type: AgenticAccess
+    url: agentic-access/prisma-cloud-agentic-access.yml
   - type: DomainSecurity
     url: security/prisma-cloud-domain-security.yml
   - type: Authentication
