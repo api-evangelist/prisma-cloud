@@ -6,7 +6,20 @@ description: >-
   multi-cloud and hybrid environments. It covers cloud security posture
   management, workload protection, identity security, and code security.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/prisma-cloud.png
 tags:
   - Cloud Native
   - Cloud Security
@@ -20,25 +33,34 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: prisma-cloud:prisma-cloud
-    name: Prisma Cloud
-    description: >-
-      Prisma Cloud by Palo Alto Networks provides comprehensive cloud native
-      security across the full application lifecycle, including vulnerability
-      management, compliance, runtime protection, and cloud security posture
-      management.
-    humanURL: https://www.paloaltonetworks.com/prisma/cloud
-    tags:
-      - Cloud Native
-      - Cloud Security
-      - Compliance
-      - Containers
-      - Security
-    properties:
-      - type: Documentation
-        url: https://docs.prismacloud.io/en
-      - type: GettingStarted
-        url: https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
+- aid: prisma-cloud:prisma-cloud
+  name: Prisma Cloud
+  description: >-
+    Prisma Cloud by Palo Alto Networks provides comprehensive cloud native security across the full application
+    lifecycle, including vulnerability management, compliance, runtime protection, and cloud security
+    posture management.
+  humanURL: https://www.paloaltonetworks.com/prisma/cloud
+  tags:
+  - Cloud Native
+  - Cloud Security
+  - Compliance
+  - Containers
+  - Security
+  properties:
+  - type: Documentation
+    url: https://docs.prismacloud.io/en
+  - type: GettingStarted
+    url: >-
+      https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud
+- aid: prisma-cloud:prisma-cloud-authentication-api
+  name: Prisma Cloud Authentication API
+  description: Login and JWT token lifecycle for Prisma Cloud CSPM.
+  humanURL: https://www.paloaltonetworks.com/prisma/cloud
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/prisma-cloud-authentication-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/prisma-cloud-agentic-access.yml
