@@ -1,0 +1,14 @@
+{
+  "provider": "prisma-cloud",
+  "sources": [
+    "prisma-cloud-authentication-api-openapi.yml"
+  ],
+  "outputs": [
+    "prisma-cloud-authentication-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
