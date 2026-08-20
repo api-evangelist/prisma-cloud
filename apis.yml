@@ -21,6 +21,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/prisma-cloud.png
 tags:
+  - Cloud-Native
+  - Cloud Security
+  - Compliance
+  - Containers
+  - CSPM
+  - Security
+tags_raw:
   - Cloud Native
   - Cloud Security
   - Compliance
@@ -41,6 +48,12 @@ apis:
     posture management.
   humanURL: https://www.paloaltonetworks.com/prisma/cloud
   tags:
+  - Cloud-Native
+  - Cloud Security
+  - Compliance
+  - Containers
+  - Security
+  tags_raw:
   - Cloud Native
   - Cloud Security
   - Compliance
