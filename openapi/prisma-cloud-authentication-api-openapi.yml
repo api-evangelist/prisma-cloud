@@ -3,31 +3,7 @@ info:
   title: Prisma Cloud CSPM API () Authentication API
   description: 'Prisma Cloud by Palo Alto Networks exposes a REST API for programmatic access
 
-    to the Cloud Security Posture Management (CSPM) platform. This specification
-
-    documents the JWT-based authentication flow that all other Prisma Cloud REST
-
-    endpoints depend on.
-
-
-    Authentication is performed by POSTing an Access Key ID / Secret Key pair to
-
-    /login, which returns a short-lived JWT. The JWT is then supplied on
-
-    subsequent requests via the x-redlock-auth header, and can be refreshed
-
-    before expiry via GET /auth_token/extend.
-
-
-    The base URL of the API depends on the customer''s Prisma Cloud stack (for
-
-    example https://api.prismacloud.io, https://api2.prismacloud.io, or one of
-
-    the regional variants); the value in `servers` should be replaced with the
-
-    URL shown in the customer''s Prisma Cloud console.
-
-    '
+    to the Cloud Security Posture Management (CSPM) platform.'
   version: '1.0'
   contact:
     name: Palo Alto Networks - Prisma Cloud
@@ -55,9 +31,7 @@ paths:
       summary: Log in and obtain a JWT
       description: 'Exchanges an Access Key ID and Secret Key for a short-lived (10 minute)
 
-        JSON Web Token used to authenticate subsequent Prisma Cloud API calls.
-
-        '
+        JSON Web Token used to authenticate subsequent Prisma Cloud API calls.'
       operationId: login
       requestBody:
         required: true
@@ -106,9 +80,7 @@ paths:
 
         token; if the token has already expired the caller must re-authenticate via
 
-        POST /login.
-
-        '
+        POST /login.'
       operationId: extendAuthToken
       security:
       - redlockAuth: []

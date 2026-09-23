@@ -1,7 +1,7 @@
 {
   "provider": "prisma-cloud",
   "sources": [
-    "prisma-cloud-authentication-api-openapi.yml"
+    "_original/prisma-cloud-openapi.yml"
   ],
   "outputs": [
     "prisma-cloud-authentication-api-openapi.yml"
@@ -10,8 +10,11 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "prisma-cloud-authentication-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "prisma-cloud-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "prisma-cloud-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
