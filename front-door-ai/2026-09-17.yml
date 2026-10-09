@@ -7,13 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: www.paloaltonetworks.com
   final_host: www.paloaltonetworks.com
-  ownership: unresolved
-  owner: null
+  ownership: shared
+  owner: palo-alto-networks
   shares_host_with:
+  - palo-alto-networks
   - panorama
   inherited_from: null
+  alias_of: null
   verdict: scored
   score: null
+  band: null
+  band_label: null
   host_score: 46
   density: null
   words: 1822
