@@ -61,5 +61,5 @@
     - connectors/applications/prisma-cloud
     vendor_link: https://www.paloaltonetworks.com/prisma/cloud
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
