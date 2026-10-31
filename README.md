@@ -1,4 +1,4 @@
-# Prisma Cloud (prisma-cloud)
+# Prisma Cloud
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,126 @@
 
 Prisma Cloud by Palo Alto Networks is a comprehensive cloud-native security platform that provides full lifecycle protection for applications across multi-cloud and hybrid environments. It covers cloud security posture management, workload protection, identity security, and code security.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/prisma-cloud/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/prisma-cloud/refs/heads/main/apis.yml)
+**Areas:** Cloud-Native · Cloud Security · Compliance · Containers · CSPM · Security
 
-## Scope
+## Prisma Cloud on APIs.io
 
-- **Type:** Index
+Everything profiled for Prisma Cloud is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/prisma-cloud/](https://apis.io/providers/prisma-cloud/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Cloud Native
-- Cloud Security
-- Compliance
-- Containers
-- CSPM
-- Security
+- [Prisma Cloud](https://apis.io/apis/prisma-cloud/prisma-cloud/) — Prisma Cloud by Palo Alto Networks provides comprehensive cloud native security across the full application lifecycle, including vulnerability management,…
+- [Prisma Cloud Authentication API](https://apis.io/apis/prisma-cloud/prisma-cloud-authentication-api/) — Login and JWT token lifecycle for Prisma Cloud CSPM.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-26
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Prisma Cloud
+Model Context Protocol servers that expose the API to agents.
 
-Prisma Cloud by Palo Alto Networks provides comprehensive cloud native security across the full application lifecycle, including vulnerability management, compliance, runtime protection, and cloud security posture management.
+- [MCP Server](https://apis.io/servers/prisma-cloud/mcp-server/)
 
-- **Human URL:** [https://www.paloaltonetworks.com/prisma/cloud](https://www.paloaltonetworks.com/prisma/cloud)
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Cloud Native
-- Cloud Security
-- Compliance
-- Containers
-- Security
+- [Prisma Cloud Agentic Access](https://apis.io/agentic-access/prisma-cloud/prisma-cloud-agentic-access/)
 
-#### Properties
+#### Collections (2)
 
-- [Documentation](https://docs.prismacloud.io/en)
-- [Getting Started](https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud)
-- [Postman Collection](collections/prisma-cloud.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/prisma-cloud.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [Prisma Cloud CSPM API (Authentication)](https://apis.io/collections/prisma-cloud/open-prisma-cloud/)
+- [Prisma Cloud CSPM API () Authentication API](https://apis.io/collections/prisma-cloud/open-prisma-cloud-authentication-api/)
 
-- [LinkedIn](https://www.linkedin.com/showcase/prisma-cloud-by-palo-alto-networks)
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Prisma Cloud Authentication](https://apis.io/security/prisma-cloud/prisma-cloud-authentication/)
+- [Prisma Cloud Domain Security](https://apis.io/security/prisma-cloud/prisma-cloud-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Prisma Cloud Plans Pricing](https://apis.io/plans/prisma-cloud/prisma-cloud-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Prisma Cloud Rate Limits](https://apis.io/rate-limits/prisma-cloud/prisma-cloud-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Prisma Cloud Finops](https://apis.io/finops/prisma-cloud/prisma-cloud-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.paloaltonetworks.com/prisma/cloud)
 - [Documentation](https://docs.prismacloud.io/en)
-- [Getting Started](https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud)
-- [GitHub Organization](https://github.com/PaloAltoNetworks)
+- [Getting started](https://docs.prismacloud.io/en/enterprise-edition/content-collections/get-started/access-prisma-cloud)
 - [Pricing](https://www.paloaltonetworks.com/resources/guides/prisma-cloud-pricing-and-editions)
 - [Blog](https://www.paloaltonetworks.com/blog/)
-- [Status Page](https://sase.status.paloaltonetworks.com/)
-- [Integrations](https://www.paloaltonetworks.com/partners)
-- [M C P Server](https://github.com/PaloAltoNetworks/prisma-airs-mcp)
+- [GitHub](https://github.com/PaloAltoNetworks)
+- [Status](https://sase.status.paloaltonetworks.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 29.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 56.7 |
+| Contract quality | 51.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 18.4 |
+
+**Agent readiness 21.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/prisma-cloud/](https://apis.io/providers/prisma-cloud/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Prisma Cloud: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/prisma-cloud/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
